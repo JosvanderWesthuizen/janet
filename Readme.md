@@ -50,5 +50,5 @@ Use the *_exp.py files to run multiple experiments. E.g.,
 python other_exp.py --data pmnist --name multi_pmnist --wd 0.00001 --cell lstm
 ```
 
-###Forget-only cell
+### Forget-only cell
 The changes to the LSTM cell are in aux_code/rnn_cells.py
