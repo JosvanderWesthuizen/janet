@@ -1,0 +1,6 @@
+# tensorflow-gpu==1.4
+py3nvml
+scipy
+sklearn
+
+
