@@ -58,7 +58,7 @@ def rnn(x, h_dim, y_dim, keep_prob, sequence_lengths,
                 out = out[1]
 
         proj_out = linear(out, y_dim, scope='output_mapping')
-    if output_format == 'all':
+    elif output_format == 'all':
         out, _ = tf.nn.dynamic_rnn(
             cell, x, sequence_length=sequence_lengths,
             dtype=tf.float32)
