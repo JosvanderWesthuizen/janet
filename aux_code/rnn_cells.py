@@ -60,7 +60,8 @@ class CustomLSTMCell(tf.contrib.rnn.BasicLSTMCell):
             elif num_gates == 2:
                 j, f = tf.split(value=concat, num_or_size_splits=num_gates,
                                 axis=1)
-                new_c = c*tf.sigmoid(f) + tf.sigmoid(1-f)*tf.tanh(j)
+                beta = 1
+                new_c = tf.sigmoid(f)*c + (1-tf.sigmoid(f-beta))*tf.tanh(j)
                 new_h = new_c
 
             if self._state_is_tuple:
