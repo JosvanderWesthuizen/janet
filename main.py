@@ -20,7 +20,8 @@ def parse_args():
                         default="standard",
                         help="[%(default)s] A string to describe this model")
     parser.add_argument("--data", type=str,
-                        default=None,
+                        default='pmnist',
+                        choices=['pmnist','mnist','add','copy'],
                         help="[%(default)s] Path to the dataset.")
     parser.add_argument("--layers", type=str,
                         default="128",
