@@ -99,8 +99,6 @@ def main(args):
         except ImportError:
             print("Could not import py3nvml")
 
-    test_agent = TestAgent(args)
-
     if args.test:
         # Get the config
         with open(os.path.join('models',args.name,'config.json')) as fp:
@@ -108,9 +106,11 @@ def main(args):
         args_dict = vars(args)
         args_dict.update(config_dict)
 
+        test_agent = TestAgent(args)
         test_wrapper(test_agent, args)
     else:
         agent = TrainAgent(args)
+        test_agent = TestAgent(args)
         try:
             agent.train(args.data, args.max_grad_norm, args.wd,
                         test_agent, args=args)
