@@ -16,10 +16,10 @@ pip install -r requirements.txt
 Add and Copy experiments can be run with
 
 ```bash
-python main.py --data add --name my_add_exp --log_every 20 --batch_size 50 --epochs 30 --wd 0.00001
+python main.py --data add --name my_add_exp --log_every 20 --batch_size 50 --epochs 30
 ```
 ```bash
-python main.py --data copy --name my_copy_exp --log_every 20 --batch_size 50 --epochs 30 --wd 0.00001
+python main.py --data copy --name my_copy_exp --log_every 20 --batch_size 50 --epochs 30
 ```	
 
 View the results on Tensorboard with
@@ -29,12 +29,12 @@ Tensorboard --logdir log
 
 Use the ```--cell``` argument to set the type of cell, default is janet. E.g.,
 ```bash
-python main.py --data copy --name my_copy_exp --log_every 20 --batch_size 50 --epochs 30 --cell lstm --wd 0.00001
+python main.py --data copy --name my_copy_exp --log_every 20 --batch_size 50 --epochs 30 --cell lstm
 ```
 
 Use the ```--chrono``` argument to use chrono initialization for the LSTM. E.g.,
 ```bash
-python main.py --data copy --name my_copy_exp --log_every 20 --batch_size 50 --epochs 30 --cell lstm --chrono --wd 0.00001
+python main.py --data copy --name my_copy_exp --log_every 20 --batch_size 50 --epochs 30 --cell lstm --chrono
 ```
 
 MNIST and pMNIST experiments can be run with
